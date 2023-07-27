@@ -1,7 +1,8 @@
 // NavBar.js
 import React from 'react';
+import { BiCart } from 'react-icons/bi';
 
-const NavBar = ({ openCart }) => {
+const NavBar = ({ openCart, cartItemCount }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -26,12 +27,9 @@ const NavBar = ({ openCart }) => {
           </ul>
         </div>
         <div className="d-flex align-items-center">
-          <button
-            className="btn btn-outline-dark me-2"
-            onClick={openCart}
-          >
-            <i className="bi bi-cart3 me-2"></i>
-            Carrito
+          <button className="btn btn-outline-dark me-2" onClick={openCart}>
+            <BiCart className="me-2" />
+            {cartItemCount > 0 && <span className="badge bg-secondary">{cartItemCount}</span>}
           </button>
         </div>
       </div>

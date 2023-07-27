@@ -1,14 +1,12 @@
-// Product.js
 import React from 'react';
 
 const Product = ({ product, addToCart }) => {
   return (
     <div className="product">
+      <img src={product.imageUrl} alt={product.name} />
       <h3>{product.name}</h3>
       <p>${product.price}</p>
-      <button className="btn btn-primary" onClick={() => addToCart(product)}>
-        Agregar al Carrito
-      </button>
+      <button onClick={() => addToCart(product)}>Agregar al Carrito</button>
     </div>
   );
 };
